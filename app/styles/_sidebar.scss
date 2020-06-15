@@ -1,0 +1,172 @@
+.sidebar {
+  min-width: 330px;
+  min-height: 100%;
+  width: 330px;
+  box-shadow: 0px 4px 32px rgba(0, 0, 0, .05), 0px 8px 24px rgba(0, 0, 0, .1), 0px 4px 8px rgba(0, 0, 0, .05);
+  background-color: #ffffff;
+  padding: 53px 32px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.sidebar__header {
+  margin-bottom: 50px;
+}
+
+.sidebar__logo-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar__logo-image {
+  display: inline-block;
+  vertical-align: top;
+  width: 105px;
+  height: 48px;
+  background-image: url("../images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 15px;
+}
+
+.sidebar__logo-text {
+  padding-top: 5px;
+  font-size: 14px;
+  line-height: 16px;
+  color: $text-color;
+  opacity: .7;
+}
+
+.sidebar__profile {
+  display: flex;
+  margin-top: 40px;
+}
+
+.sidebar__profile-block {
+  position: relative;
+
+  &._text {
+    flex-basis: 71%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 5px;
+    box-sizing: border-box;
+  }
+}
+
+.sidebar__profile-image {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.sidebar__profile-name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 46px;
+  color: #2E2E2E;
+}
+
+.sidebar__profile-exit {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 14px;
+  width: 18px;
+  height: 18px;
+  background: url($sprite) no-repeat 0 0;
+  cursor: pointer;
+
+  &:hover {
+    background: url($sprite) no-repeat -22px 0;
+  }
+}
+
+.sidebar__nav {
+  margin-top: 72px
+}
+
+.sidebar__nav-list {
+
+}
+
+.sidebar__nav-item {
+
+  & + & {
+    margin-top: 26px;
+  }
+}
+
+.sidebar__nav-link {
+  display: block;
+  position: relative;
+  padding: 5px 5px 5px 56px;
+  cursor: pointer;
+}
+
+.sidebar__nav-icon {
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  width: 22px;
+  height: 22px;
+  background: url($sprite) no-repeat 0 0;
+
+  &._pharmacy {
+    background-position: 0 -18px;
+    height: 21px;
+    top: 4px;
+  }
+    
+  &._courses {
+    background-position: 0 -58px;
+    left: 5px;
+    width: 24px;
+  }
+    
+  &._app {
+    background-position: 0 -79px;
+    left: 8px;
+    top: 4px;
+  }
+    
+  &._profile {
+    background-position: 0 -39px;
+    height: 20px;
+  }
+
+  .sidebar__nav-link:hover &,
+  .sidebar__nav-link._current & {
+
+    &._pharmacy {
+      background-position: -22px -18px;
+    }
+      
+    &._courses {
+      background-position: -22px -58px;
+      left: 3px;
+    }
+      
+    &._app {
+      background-position: -24px -79px;
+    }
+      
+    &._profile {
+      background-position: -24px -39px;
+    }
+  }
+
+}
+
+.sidebar__nav-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: $text-color;
+
+  .sidebar__nav-link:hover &,
+  .sidebar__nav-link._current & {
+    color: $link-color-hover;
+  }
+}

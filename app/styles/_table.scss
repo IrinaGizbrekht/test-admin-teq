@@ -1,0 +1,180 @@
+.section__table {
+
+}
+
+.table {
+  overflow: hidden;
+}
+
+.table__row-head {
+  display: flex;
+}
+
+.table__row {
+  display: flex;
+
+  &:hover {
+    background: #EEF2F5;
+    border-radius: 8px;
+    cursor: default;
+  }
+}
+
+.table__cell {
+  position: relative;
+  text-align: left;
+  vertical-align: middle;
+  padding: .75rem 1rem .75rem 0;
+  box-sizing: border-box;
+
+  &._checkbox {
+    width: 50px;
+    padding: .85rem 1rem .75rem 10px;
+  }
+
+  &._date {
+    width: 142px;
+  }
+
+  &._name {
+    width: 319px;
+  }
+
+  &._phone {
+    width: 254px;
+  }
+
+  &._name-pharm {
+    width: 254px;
+  }
+
+  &._location {
+    width: 410px;
+  }
+
+  .table__row-head &._location:after {
+    content: none;
+  }
+}
+
+.table__checkbox-input {
+ 
+}
+
+.table__checkbox-label {
+  
+}
+
+.table__text-container {
+  overflow: hidden;
+  white-space: nowrap;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 0;
+    height: 100%;
+    width: 30px;
+    background-image: linear-gradient(to left, #ffffff 0%, rgba(238, 242, 245, 0) 100%);
+  }
+
+  .table__row:hover &:after {
+    background-image: linear-gradient(to left, #EEF2F5 0%, rgba(238, 242, 245, 0) 100%);
+  }
+}
+
+.table__text {
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  color: $text-color;
+  white-space: nowrap;
+
+  .table__row-head & {
+    font-size: 14px;
+    line-height: 20px;
+    color: #ACB2BD;
+  }
+
+  td.table__cell._location &:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 15px;
+    position: relative;
+    top: 2px;
+    background: url($sprite) no-repeat 0 0;
+    margin-right: 11px;
+  }
+
+  .table__cell._location &._country-ru:before {
+    background-position: 0 -162px;
+  }
+
+  .table__cell._location &._country-kz:before {
+    background-position: 0 -194px;
+  }
+
+  .table__cell._location &._country-by:before {
+    background-position: 0 -177px;
+  }
+  
+  .table__row._checked & {
+    color: #30BE61;
+  }
+
+}
+
+.table__icon-dot {
+  font-size: 19px;
+  margin-left: 6px;
+}
+
+.table__icon-sort {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    width: 12px;
+    height: 8px;
+    position: absolute;
+    left: 4px;
+    top: 7px;
+    background: url($sprite) no-repeat 0 -131px;
+  }
+  
+}
+
+@media (max-width: 1440px) {
+
+  .table__cell._name-pharm {
+    display: none;
+  }
+
+  .table__cell {
+  
+    &._date {
+      width: 125px;
+    }
+  
+    &._phone {
+      width: 179px;
+    }
+  
+    &._location {
+      width: 350px;
+    }
+  }
+
+  td.table__cell._location &:before {
+    top: 1px;
+    margin: 0 11px 0 2px;
+  }
+
+}

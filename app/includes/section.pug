@@ -1,0 +1,32 @@
+-
+    const dataNavSection = [
+        {
+            name: 'Требуют подтверждения',
+            isCurrent: true
+        },
+        //- {
+        //-     name: 'Роли',
+        //-     isCurrent: false
+        //- },
+        //- {
+        //-     name: 'Статистика',
+        //-     isCurrent: false
+        //- }
+    ]
+
+section.section
+    header.section__header
+        h1.section__title Заявки
+    nav.section__nav
+        ul.section__nav-list
+            for item in dataNavSection
+                li.section__nav-item(class=item.isCurrent === true ? '_current' : '')
+                    a.section__nav-link
+                        span.section__nav-text= item.name
+    .section__content
+        .section__buttons
+            button.section__button.admin-button.js-section-button Согласовать 
+            //- button.section__button.admin-button._transparent Скрыть архивные
+
+        include table.pug
+        

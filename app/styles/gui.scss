@@ -1,0 +1,117 @@
+/* Custom chechbox */
+.admin-custom-checkbox__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.admin-custom-checkbox__label {
+  position: relative;
+  display: block;
+  width: 19px;
+  height: 19px;
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 19px;
+    height: 19px;
+  }
+
+  &:before {
+    border: 1px solid #D2D6DE;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .table__row-head &._all-check:before {
+    border: 0;
+    border-radius: 0;
+    background: url($sprite) no-repeat 1px -140px;
+  }
+
+  .admin-custom-checkbox__input:checked ~ &:after {
+    background: url($sprite) no-repeat -18px -140px;
+  }
+
+  .admin-custom-checkbox__input:checked ~ &:before {
+    border: 0;
+  }
+
+}
+
+/* /Custom chechbox */
+
+/* Buttons */
+.admin-button {
+  @extend %button;
+
+  @extend %button-hover;
+
+  &._transparent {
+    @extend %button-transparent;
+  }
+
+  &._bigger {
+    @extend %button-bigger;
+  }
+}
+
+/* /Buttons */
+
+/* Entry field */
+.admin-dropdown {
+  position: relative;
+}
+
+.admin-dropdown__icon {
+  width: 20px;
+  height: 15px;
+  position: absolute;
+  z-index: -1;
+  right: 5px;
+  top: 22px;
+  background: url($sprite) no-repeat -25px -124px;
+}
+
+.admin-dropdown__select {
+  display: block;
+  width: 100%;
+  padding: 13px 32px 13px 14px;
+  box-sizing: border-box;
+  font-weight: 500;
+  background-color: transparent;
+
+  @extend %entry-field;
+
+  @extend %text-entry-field;
+
+  @extend %hide-arrow-select;
+}
+
+.admin-dropdown__option {
+  font-weight: 500;
+
+  @extend %text-entry-field;
+}
+
+.admin-textarea {
+  display: block;
+  width: 100%;
+  min-height: 139px;
+  margin: 2px 0 0 0;
+  padding: 13px;
+  box-sizing: border-box;
+  resize: none;
+
+  @extend %entry-field;
+
+  @extend %text-entry-field;
+
+  @extend %hide-placeholder;
+}
+
+/* /Entry field */

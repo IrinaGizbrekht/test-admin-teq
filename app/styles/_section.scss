@@ -1,0 +1,90 @@
+$padding-wrapper: 43px;
+
+.section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.section__header {
+  padding: 69px $padding-wrapper 49px;
+  background: $bg-color;
+}
+
+.section__title {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 24px;
+  color: $text-color;
+  letter-spacing: .01em;
+}
+
+.section__nav {
+  padding: 0 $padding-wrapper;
+  background: $bg-color;
+}
+
+.section__nav-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section__nav-item {
+  padding-bottom: 10px;
+
+  & + & {
+    margin-left: 40px;
+  }
+
+  &._current,
+  &:hover {
+    border-bottom: 4px solid $link-nav-table-color;
+  }
+}
+
+.section__nav-link {
+  cursor: pointer;
+
+  .section__nav-item._current & {
+    cursor: default;
+  }
+}
+
+.section__nav-text {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: .01em;
+  color: $link-nav-table-color;
+}
+
+.section__content {
+  padding: 25px $padding-wrapper;
+  background: #ffffff;
+}
+
+.section__buttons {
+  display: flex;
+  margin-bottom: 29px;
+}
+
+.section__button {
+  
+  & + & {
+    margin-left: 24px;
+  }
+}
+
+@media (max-width: 1440px) {
+
+  .section__header {
+    padding: 59px $padding-wrapper 40px;
+  }
+
+  .section__buttons {
+    margin-bottom: 33px;
+  }
+
+  .admin-button {
+    padding: 12px 17px;
+  }
+}

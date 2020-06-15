@@ -1,0 +1,119 @@
+- 
+    const dataTableHead = [
+        {
+            title: 'Дата',
+            class: 'date'
+        },
+        {
+            title: 'ФИО',
+            class: 'name'
+        },
+        {
+            title: 'Телефон',
+            class: 'phone'
+        },
+        {
+            title: 'Наименование аптеки',
+            class: 'name-pharm'
+        },
+        {
+            title: 'Адес филиала',
+            class: 'location'
+        }
+    ]
+
+    const dataTable = [
+        {
+            date: '31.10.2019',
+            name: 'Маховиков Анатолий Викторович',
+            phone: '+7 (303) 555-0105',
+            namePharm: 'Аптека 1',
+            locationPharm: 'Свердловская область, Екатеринбур, Центральный,  ул. Демидова, д 16/1',
+            country: 'ru'
+        },
+        {
+            date: '30.10.2019',
+            name: 'Андреева Марина Александровна',
+            phone: '+7 (907) 555-0101',
+            namePharm: 'Аптека 1',
+            locationPharm: 'Волгоградская область, Волгоград, ул. Красная, д. 45',
+            country: 'by'
+        },
+        {
+            date: '29.10.2019',
+            name: 'Паршукова Маргарита Юрьевна',
+            phone: '+7 (217) 555-0113',
+            namePharm: 'Аптека 2',
+            locationPharm: 'Вологодская область, Вологда, Железнодорожный, ул. Вокзальная, д. 38 ',
+            country: 'kz'
+        },
+        {
+            date: '28.10.2019',
+            name: 'Кузнецова Татьяна Геннадьевна',
+            phone: '+7 (704) 555-0127',
+            namePharm: 'Аптека 2',
+            locationPharm: 'Свердловская область, Екатеринбур, Центральный,  ул. Демидова, д 16/1',
+            country: 'ru'
+        },
+        {
+            date: '27.10.2019',
+            name: 'Ломакина Надежда Михайловна',
+            phone: '+7 (207) 555-0119',
+            namePharm: 'Аптека 3',
+            locationPharm: 'Волгоградская область, Волгоград, ул. Красная, д. 45',
+            country: 'ru'
+        },
+        {
+            date: '26.10.2019',
+            name: 'Текутьев Александр Александрович',
+            phone: '+7 (219) 555-0114',
+            namePharm: 'Аптека 3',
+            locationPharm: 'Вологодская область, Вологда, Железнодорожный, ул. Вокзальная, д. 38 ',
+            country: 'ru'
+        },
+        {
+            date: '26.10.2019',
+            name: 'Попова Анастасия Владимировна',
+            phone: '+7 (229) 555-0109',
+            namePharm: 'Аптека 3',
+            locationPharm: 'Свердловская область, Екатеринбур, Центральный,  ул. Демидова, д 16/1',
+            country: 'ru'
+        }
+    ]
+
+table.section__table.table
+
+    tr.table__row-head
+
+        th.table__cell._checkbox
+            input.table__checkbox-input.admin-custom-checkbox__input#checkbox-head(type='checkbox')
+            label.table__checkbox-label.admin-custom-checkbox__label._all-check(for='checkbox-head')
+
+        for item in dataTableHead
+            th.table__cell(class='_' + item.class)
+                span.table__text= item.title
+                    if item.class === 'name'
+                        i.table__icon-dot &#8226;
+                    if item.class === 'date'
+                        i.table__icon-sort
+
+    for item, index in dataTable
+        tr.table__row.js-table-row
+            td.table__cell._checkbox
+                input.table__checkbox-input.admin-custom-checkbox__input(id='checkbox-' + index, data-index=index, type='checkbox')
+                label.table__checkbox-label.admin-custom-checkbox__label(for='checkbox-' + index)
+            td.table__cell._date
+                p.table__text-container
+                    span.table__text= item.date
+            td.table__cell._name
+                p.table__text-container
+                    span.table__text= item.name
+            td.table__cell._phone
+                p.table__text-container
+                    span.table__text= item.phone
+            td.table__cell._name-pharm
+                p.table__text-container
+                    span.table__text= item.namePharm
+            td.table__cell._location
+                p.table__text-container
+                    span.table__text(class='_country-' + item.country, title=item.locationPharm)= item.locationPharm

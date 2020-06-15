@@ -1,0 +1,43 @@
+-
+    const dataSidebar = [
+        {
+            name: 'Аптечные сети',
+            modifier:'pharmacy',
+            isCurrent: false
+        },
+        {
+            name: 'Курсы',
+            modifier: 'courses',
+            isCurrent: false
+        },
+        {
+            name: 'Заявки',
+            modifier: 'app',
+            isCurrent: true
+        },
+        {
+            name: 'Личный профиль',
+            modifier: 'profile',
+            isCurrent: false
+        }
+    ]
+
+aside.sidebar
+    header.sidebar__header
+        .sidebar__logo-block
+            span.sidebar__logo-image
+            span.sidebar__logo-text Информационная система
+        .sidebar__profile
+            .sidebar__profile-block
+                img.sidebar__profile-image(src="https://i.picsum.photos/id/270/40/40.jpg?hmac=s8kRHWP72VeBqWhRd5_Hujg1xzD7fIjEM--MmMLy3Ic" alt="avatar")
+            .sidebar__profile-block._text
+                span.sidebar__profile-name Петров П.П.
+            .sidebar__profile-block
+                span.sidebar__profile-exit
+        nav.sidebar__nav
+            ul.sidebar__nav-list
+                for item in dataSidebar
+                    li.sidebar__nav-item
+                        a.sidebar__nav-link(class=item.isCurrent === true ? '_current' : '')
+                            span.sidebar__nav-icon(class='_' + item.modifier)
+                            span.sidebar__nav-text=  item.name
