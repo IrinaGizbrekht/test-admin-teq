@@ -1,0 +1,30 @@
+html,
+body,
+.wrapper {
+  min-height: 100vh;
+}
+
+html {
+
+  &.overlay {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+}
+
+body {
+  font-family: $font;
+
+  .overlay & {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+}

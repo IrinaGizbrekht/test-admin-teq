@@ -1,0 +1,19 @@
+.modal.js-modal
+    .modal__wrapper
+        header.modal__header
+            h2.modal__title Согласование
+            span.modal__close.js-modal-close
+        .modal__block._dropdown
+            label.modal__block-text Решение
+            .modal__dropdown.admin-dropdown
+                span.admin-dropdown__icon
+                select.admin-dropdown__select
+                    option.admin-dropdown__option Согласовать
+                    option.admin-dropdown__option Отклонить
+        .modal__block._comment
+            label.modal__block-text Комментарий
+            textarea.modal__textarea.admin-textarea(placeholder='При отрицательном решении по заявке заполните поле комментарий')
+        .modal__block._buttons
+            button.modal__button.admin-button._bigger Добавить
+            button.modal__button.admin-button._transparent._bigger Отменить
+        
